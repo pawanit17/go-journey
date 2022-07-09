@@ -9,3 +9,10 @@
 - They also wanted to have a simpler set of language constructs - simplicity.
 
 # Deep dive
+- Variables
+  ```var int i = 42```
+  
+  
+  
+  
+  
