@@ -10,9 +10,38 @@
 
 # Deep dive
 - Variables
-  ```var int i = 42```
+  ```var i int = 42```
+  ```var j float32 = 9.4
+  ```fmt.Printf("%v, %T", i, i )```
+- var block
+  - ```
+    var (
+       abc = 10
+       def = 9.0
+       ghi ="P"
+    )
+    ```
+- Shadowing
+   - Variable that is in the innermost scope takes preference. 
   
-  
-  
-  
+- Expose
+  - Block scope
+  - Package scope
+    - Should be small 
+  - Outside package
+    - Should be capitals
+
+- Casting
+  - ```var i float32 = 92.3
+    var j int = int(i)```
+  - strconv package is used for converting strings to integers.
+
+- Data Types
+  - Boolean
+    - defaulted to false 
+    - var n bool = true
+    - var n anotherBool = false
+    - n := 1 == 2
+  - Numbers
+  - Text 
   
