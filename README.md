@@ -37,6 +37,36 @@ func count(teddyName string, index int) int {
 	return -1
 }
 ```
+- Functions in GO can return more than one value as result.
+```
+package main
+
+import (
+	"errors"
+	"fmt"
+	"math"
+)
+
+func main() {
+	fmt.Println("Reached the main method")
+
+	sqrtRoot, problem := sqrt(-32)
+
+	if problem != nil {
+		fmt.Print(problem)
+	} else {
+		fmt.Print(sqrtRoot)
+	}
+}
+
+func sqrt(x float64) (float64, error) {
+	if x < 0 {
+		return 0, errors.New("Undefined for negative numbers")
+	} else {
+		return math.Sqrt(x), nil
+	}
+}
+```
 
 ## Arrays & Slices
 - By default, all elements in the array are initialized to 0.
@@ -107,5 +137,35 @@ func main() {
 	}
 }
 ```
+
+- Using ```Range```
+```
+func main() {
+	fmt.Println("Reached the main method")
+
+        // Range on a string
+	names := [4]string{"Naruto", "Sasuke", "Ichigo", "Bankai"}
+
+	for index, value := range names {
+
+		fmt.Print(index)
+		fmt.Println(value)
+	}
+	
+	// Range on a Map
+	vertices := make(map[string]int)
+	vertices["alpha"] = 1
+	vertices["beta"] = 2
+	vertices["charlie"] = 3
+	vertices["delta"] = 4
+	vertices["echo"] = 5
+	vertices["foxtrot"] = 6
+
+	for key, value := range vertices {
+
+		fmt.Print(key)
+		fmt.Println(value)
+	}
+}
 
 
