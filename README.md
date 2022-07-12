@@ -74,4 +74,38 @@ Reached the main method
 [10 20 30 40 50 60]
 ```
 
+## Maps
+- Maps map from a key to a value.
+- Map is created using the built-in ```make``` method.
+- An entry in the map is deleted via the ```remove``` method.
+- A value in an entry in a Map can be accessed via the [].
+```func main() {
+	fmt.Println("Reached the main method")
+
+	vertices := make(map[string]int)
+	vertices["triangle"] = 3
+	vertices["quadrilateral"] = 4
+	vertices["pentagon"] = 5
+	fmt.Println("Reached the called method!", vertices)
+
+	fmt.Println("Reached the called method!", vertices["pentagon"])
+
+	delete(vertices, "pentagon")
+
+	fmt.Println("Reached the called method!", vertices["pentagon"])
+}
+```
+
+## Loops
+- Only the for loop is available in GO.
+- ```
+func main() {
+	fmt.Println("Reached the main method")
+
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+	}
+}
+```
+
 
