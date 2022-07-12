@@ -13,6 +13,8 @@
 - main method inside main package is the entry point into the application.
 - The return type is specified at the end of the method signature unlike other languages.
 - Default value is the zero value of the data type - 0 for int, empty string for string.
+
+## Variables & Functions 
 ```
 package main
 
@@ -35,3 +37,41 @@ func count(teddyName string, index int) int {
 	return -1
 }
 ```
+
+## Arrays & Slices
+- By default, all elements in the array are initialized to 0.
+```
+	numbers := [5]int{10, 20, 30, 40, 50}
+	fmt.Println(numbers)
+
+	numbers[2] = -1
+	fmt.Println(numbers)
+```
+- Array size has to be determined at compile time. So we cannot add a sixth element to a 5 element array.
+- Also the size of the array cannot be dynamically provided. It should be available as a number when the program is compiling.
+- Slices are used to overcome this. Slices are abstraction over array to simulate dynamic number of elements.
+- Append method can be used on Slice to update it. Slices are backed up by Arrays.
+- ```func main() {
+	fmt.Println("Reached the main method")
+
+	numbersArray := [5]int{10, 20, 30, 40, 50}
+	fmt.Println(numbersArray)
+
+	numbersSlice := []int{10, 20, 30, 40, 50}
+	fmt.Println(numbersSlice)
+
+	numbersSliceUpdated := append(numbersSlice, 60)
+	fmt.Println(numbersSlice)
+	fmt.Println(numbersSliceUpdated)
+     }```
+Gives:
+```
+PS D:\Development\Go\Basics> go run basics.go
+Reached the main method
+[10 20 30 40 50]
+[10 20 30 40 50]
+[10 20 30 40 50]
+[10 20 30 40 50 60]
+```
+
+
