@@ -9,6 +9,12 @@
 - Go was developed in Google when the developers noticed that the fastness of C/C++ is offset by the slower build processes.
 - They also wanted to have a simpler set of language constructs - simplicity.
 
+# Oddities
+- Go does not have exceptions.
+- Go does not have classes.
+- Go functions can return multiple values.
+- ```nil``` is the equivalent of ```null``` in other languages.
+
 # Samples
 - main method inside main package is the entry point into the application.
 - The return type is specified at the end of the method signature unlike other languages.
