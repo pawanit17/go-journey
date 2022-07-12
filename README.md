@@ -3,45 +3,35 @@
 - Has its own Garbage collection scheme
 - Inherently parallel processing language
 - Developed at Google
+- 12 minute video coverage of GO.
 
 # What problem does GO solve
 - Go was developed in Google when the developers noticed that the fastness of C/C++ is offset by the slower build processes.
 - They also wanted to have a simpler set of language constructs - simplicity.
 
-# Deep dive
-- Variables
-  ```var i int = 42```
-  ```var j float32 = 9.4
-  ```fmt.Printf("%v, %T", i, i )```
-- var block
-  - ```
-    var (
-       abc = 10
-       def = 9.0
-       ghi ="P"
-    )
-    ```
-- Shadowing
-   - Variable that is in the innermost scope takes preference. 
-  
-- Expose
-  - Block scope
-  - Package scope
-    - Should be small 
-  - Outside package
-    - Should be capitals
+# Samples
+- main method inside main package is the entry point into the application.
+- The return type is specified at the end of the method signature unlike other languages.
+- Default value is the zero value of the data type - 0 for int, empty string for string.
+```
+package main
 
-- Casting
-  - ```var i float32 = 92.3
-    var j int = int(i)```
-  - strconv package is used for converting strings to integers.
+import "fmt"
 
-- Data Types
-  - Boolean
-    - defaulted to false 
-    - var n bool = true
-    - var n anotherBool = false
-    - n := 1 == 2
-  - Numbers
-  - Text 
-  
+func main() {
+	fmt.Println("Reached the main method")
+
+	var name string = "Linku"
+	var index int = 3
+	value := count(name, index)
+
+	fmt.Println("value:", value)
+}
+
+func count(teddyName string, index int) int {
+	fmt.Println("Reached the called method!", teddyName)
+	fmt.Println("Reached the called method!", index)
+
+	return -1
+}
+```
