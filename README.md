@@ -176,7 +176,7 @@ func main() {
 
 ## Struct
 - Collection of fields.
-- ``` 
+``` 
 type person struct {
 	name string
 	age  int
@@ -190,3 +190,31 @@ func main() {
 ```
 
 ## Pointers
+- Similar to C/C++ with slight syntax change.
+```
+func main() {
+
+	x := 9
+	y := 10
+	fmt.Println(x, " ", y)
+
+	swap(&x, &y)
+	fmt.Println(x, " ", y)
+}
+
+func swap(xCopy *int, yCopy *int) {
+	var temp int = 0
+	temp = *xCopy
+	*xCopy = *yCopy
+	*yCopy = temp
+}
+```
+
+## Questions
+- If classes are not available in GO, how are components modeled?.
+- Methods in Structures?.
+- What are GO routines
+- Concurrency
+- REST API
+- Database connectivity
+- Microservices
