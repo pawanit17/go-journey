@@ -175,6 +175,18 @@ func main() {
 }
 
 ## Struct
+- Collection of fields.
+- ``` 
+type person struct {
+	name string
+	age  int
+}
 
+func main() {
+
+	p := person{name: "Pavan", age: 23}
+	fmt.Print(p.name, "  ", p.age)
+}
+```
 
 ## Pointers
